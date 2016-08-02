@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 const express = require('express');
 const path = require('path');
 const compression = require('compression');
@@ -65,7 +64,7 @@ module.exports = (app, options) => {
   if (isProd) {
     addProdMiddlewares(app, options);
   } else {
-    const webpackConfig = require('../../internals/webpack/webpack.dev.babel');
+    const webpackConfig = require('../../internals/webpack/webpack.dev');
     addDevMiddlewares(app, webpackConfig);
   }
 

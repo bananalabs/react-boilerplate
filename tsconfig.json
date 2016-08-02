@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "app",
+    "sourceMap": true,
+    "target": "es5",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "jsx": "react",
+    "outDir": "js"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
