@@ -19,14 +19,15 @@ export default function configureStore(initialState = {}, history) {
     routerMiddleware(history),
   ];
 
-  const enhancers = [
+  /* const enhancers = [
     applyMiddleware(...middlewares),
     devtools(),
-  ];
+  ]; */
 
   const store = createStore(
     createReducer(),
-    compose(...enhancers)
+    compose(applyMiddleware(...middlewares),
+    devtools())
   );
 
   // Extensions

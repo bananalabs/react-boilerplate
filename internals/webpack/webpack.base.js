@@ -13,7 +13,7 @@ module.exports = (options) => ({
   }, options.output), // Merge with env dependent settings
   module: {
     loaders: [{
-      test: /\.tsx?$/,
+      test: /\.ts$/,
       loader: 'ts-loader',
       exclude: /node_modules/,
     }, {
@@ -80,6 +80,7 @@ module.exports = (options) => ({
       '.react.js',
       '.ts',
       '.tsx',
+      '.json'
     ],
     packageMains: [
       'jsnext:main',

@@ -186,6 +186,10 @@ declare namespace Redux {
        * @param nextReducer The reducer for the store to use instead.
        */
       replaceReducer(nextReducer: Reducer<S>): void;
+
+      runSaga: any;
+
+      asyncReducers: any;
     }
 
     /**
@@ -394,6 +398,7 @@ declare namespace Redux {
       f1: (a: any) => R,
       ...funcs: Function[]
     ): (...args: any[]) => R;
+
 }
 
 declare module "redux" {

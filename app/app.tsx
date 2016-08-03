@@ -8,11 +8,13 @@
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
-// Import all the third party stuff
+// tslint:disable-next-line
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+
+// Import all the third party stuff
 import { Provider } from 'react-redux';
-import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './store';
 
@@ -29,7 +31,7 @@ const store = configureStore(initialState, browserHistory);
 // As this boilerplate uses Redux & Redux-Saga, the `updateStore` is needed
 // if you want to `take` actions in your Sagas, dispatched from devTools.
 if (window.devToolsExtension) {
-  window.devToolsExtension.updateStore(store);
+  window.devToolsExtension = window.devToolsExtension.updateStore(store);
 }
 
 // Sync history and store, as the react-router-redux reducer
@@ -61,5 +63,5 @@ ReactDOM.render(
 // Install ServiceWorker and AppCache in the end since
 // it's not most important operation and if main code fails,
 // we do not want it installed
-import { install } from 'offline-plugin/runtime';
-install();
+// import { install } from 'offline-plugin/runtime';
+// install();

@@ -2,8 +2,6 @@
  * The global state selectors
  */
 
-import { createSelector } from 'reselect';
-
 const selectLocationState = () => {
   let prevRoutingState;
 

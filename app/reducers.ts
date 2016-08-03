@@ -28,7 +28,9 @@ function routeReducer(state = routeInitialState, action) {
   switch (action.type) {
     /* istanbul ignore next */
     case LOCATION_CHANGE:
-      return { ...state, locationBeforeTransitions: action.payload };
+      return Object.assign({}, state, {
+        locationBeforeTransitions: action.payload
+      });
     default:
       return state;
   }
@@ -37,10 +39,9 @@ function routeReducer(state = routeInitialState, action) {
 /**
  * Creates the main reducer with the asynchronously loaded ones
  */
-export default function createReducer(asyncReducers) {
-  return combineReducers({
+export default function createReducer(asyncReducers?: any): any {
+  return combineReducers(Object.assign({}, asyncReducers, {
     route: routeReducer,
     global: globalReducer,
-    ...asyncReducers,
-  });
+  }));
 }

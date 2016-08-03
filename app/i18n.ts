@@ -17,8 +17,8 @@ export const appLocales = [
   'de',
 ];
 
-import enTranslationMessages from './translations/en.json';
-import deTranslationMessages from './translations/de.json';
+import * as enTranslationMessages from './translations/en.json';
+import * as deTranslationMessages from './translations/de.json';
 
 export const formatTranslationMessages = (messages) => {
   const formattedMessages = {};

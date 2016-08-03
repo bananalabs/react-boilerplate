@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-function globalReducer(state = {}, action: any) : any {
+function globalReducer(state = {}, action: any): any {
   switch (action.type) {
     default:
       return state;

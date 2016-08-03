@@ -28,7 +28,7 @@ module.exports = {
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css$/, loader: 'null-loader' },
       {
-        test: /\.tsx?$/,
+        test: /\.ts?/,
         loader: 'ts-loader',
         exclude: /node_modules/,
       },

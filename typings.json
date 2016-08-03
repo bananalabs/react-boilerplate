@@ -1,13 +1,18 @@
 {
   "globalDependencies": {
     "enzyme": "registry:dt/enzyme#2.4.1+20160709041153",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
     "node": "registry:dt/node#6.0.0+20160801161248",
     "react": "registry:dt/react#0.14.0+20160801203155",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
+    "react-intl": "registry:dt/react-intl#2.0.0+20160412155000",
     "react-motion": "registry:dt/react-motion#0.0.0+20160705193226",
     "react-redux": "registry:dt/react-redux#4.4.0+20160724070751",
     "react-router": "registry:dt/react-router#2.0.0+20160621215300",
+    "react-router-redux": "registry:dt/react-router-redux#4.0.0+20160724070902",
     "redux": "registry:dt/redux#3.5.2+20160703092728",
-    "reselect": "registry:dt/reselect#2.0.2+20160319031821"
+    "reselect": "registry:dt/reselect#2.0.2+20160319031821",
+    "systemjs": "registry:dt/systemjs#0.19.29+20160702105636",
+    "whatwg-fetch": "registry:dt/whatwg-fetch#0.0.0+20160728142841"
   }
 }
