@@ -5,9 +5,7 @@
     "target": "es5",
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
-    "jsx": "react",
-    "rootDir": "app",
-    "outDir": "./js/app"
+    "jsx": "react"
   },
   "exclude": [
     "node_modules"

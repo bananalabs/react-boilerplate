@@ -14,7 +14,7 @@ module.exports = (options) => ({
   module: {
     loaders: [{
       test: /\.ts$/,
-      loader: 'ts-loader',
+      loader: ['react-hot', 'ts-loader'],
       exclude: /node_modules/,
     }, {
       // Transform our own .css files with PostCSS and CSS-modules
