@@ -28,7 +28,6 @@
     "start:prod": "cross-env NODE_ENV=production node server",
     "pagespeed": "node ./internals/scripts/pagespeed.js",
     "presetup": "npm i chalk",
-    "createJSDir": "node ./internals/scripts/createJSDir.js",
     "css": "node ./node_modules/typed-css-modules/lib/cli.js app",
     "setup": "node ./internals/scripts/setup.js",
     "clean": "shjs ./internals/scripts/clean.js",
