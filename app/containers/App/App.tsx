@@ -11,6 +11,7 @@ import 'sanitize.css/sanitize.css';
 
 // tslint:disable-next-line
 import * as React from 'react';
+// import styles from './style.css';
 
 function App() {
   return (

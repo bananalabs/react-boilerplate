@@ -21,18 +21,12 @@ module.exports = {
     preLoaders: [
       { test: /\.js$/,
         loader: 'isparta',
-        include: path.resolve('app/'),
+        include: path.resolve('js/app/'),
       },
     ],
     loaders: [
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css$/, loader: 'null-loader' },
-      {
-        test: /\.ts?/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-      },
-
       // sinon.js--aliased for enzyme--expects/requires global vars.
       // imports-loader allows for global vars to be injected into the module.
       // See https://github.com/webpack/webpack/issues/304
@@ -42,6 +36,13 @@ module.exports = {
       { test: /\.jpe?g$|\.gif$|\.png$/i,
         loader: 'null-loader',
       },
+      {
+        test: /\.(js|jsx)$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react-hmre', 'es2015', 'react']
+        },
+      }
     ],
   },
 
@@ -83,8 +84,6 @@ module.exports = {
       '.js',
       '.jsx',
       '.react.js',
-      '.ts',
-      '.tsx',
       '.json',
     ],
     alias: {
