@@ -13,8 +13,8 @@ module.exports = (options) => ({
   }, options.output), // Merge with env dependent settings
   module: {
     loaders: [{
-      test: /\.ts$/,
-      loader: ['react-hot', 'ts-loader'],
+      test: /\.tsx?$/,
+      loader: 'react-hot!ts-loader?jsx=true',
       exclude: /node_modules/,
     }, {
       // Transform our own .css files with PostCSS and CSS-modules

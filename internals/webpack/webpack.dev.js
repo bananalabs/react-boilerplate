@@ -15,6 +15,7 @@ const dllPlugin = pkg.dllPlugin;
 const cssnext = require('postcss-cssnext');
 const postcssFocus = require('postcss-focus');
 const postcssReporter = require('postcss-reporter');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const plugins = [
   new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
@@ -30,9 +31,9 @@ module.exports = require('./webpack.base')({
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
     'webpack-hot-middleware/client',
-    path.join(process.cwd(), 'app/app.js'), // Start with js/app.js
+    path.join(process.cwd(), 'app/app.tsx'), // Start with js/app.js
   ],
-  
+
   // Don't use hashes in dev mode for better performance
   output: {
     filename: '[name].js',

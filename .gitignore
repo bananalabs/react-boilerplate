@@ -4,8 +4,6 @@ build
 node_modules
 js
 stats.json
-app/**/*.js
-app/**/*.js.map
 
 # Cruft
 .DS_Store
