@@ -10,6 +10,7 @@ const addDevMiddlewares = (app, webpackConfig) => {
   const webpackHotMiddleware = require('webpack-hot-middleware');
   const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
+    hot: true,
     noInfo: true,
     publicPath: webpackConfig.output.publicPath,
     silent: true,
@@ -17,7 +18,10 @@ const addDevMiddlewares = (app, webpackConfig) => {
   });
 
   app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
+  app.use(webpackHotMiddleware(compiler, {
+    log: console.log,
+    path: '/__webpack_hmr'
+  }));
 
   // Since webpackDevMiddleware uses memory-fs internally to store build
   // artifacts, we use it instead

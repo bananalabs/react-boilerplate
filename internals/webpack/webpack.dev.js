@@ -18,6 +18,7 @@ const postcssReporter = require('postcss-reporter');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const plugins = [
+  new webpack.optimize.OccurrenceOrderPlugin(),
   new webpack.HotModuleReplacementPlugin(), // Tell webpack we want hot reloading
   new webpack.NoErrorsPlugin(),
   new HtmlWebpackPlugin({
@@ -30,7 +31,7 @@ module.exports = require('./webpack.base')({
   // Add hot reloading in development
   entry: [
     'eventsource-polyfill', // Necessary for hot reloading with IE
-    'webpack-hot-middleware/client',
+    'webpack-hot-middleware/client?reload=true',
     path.join(process.cwd(), 'app/app.tsx'), // Start with js/app.js
   ],
 
