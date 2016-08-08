@@ -46,9 +46,19 @@
   <sub>Made with ❤︎ by <a href="https://twitter.com/mxstbr">Max Stoiber</a> and <a href="https://github.com/mxstbr/react-boilerplate/graphs/contributors">contributors</a>. <i>If you're using this boilerplate, we'd love to <a href="https://github.com/mxstbr/react-boilerplate/issues/115">hear from you</a>!</i></sub>
 </div>
 
+## Differences between react-boilerplate and react-boilerplate-ts
+
+This boilerplate has been forked off of react-boilerplate. A few differences:
+1. All files under 'app' are now .ts/.tsx files
+2. babel-loader replaces by ts-loader
+3. Use 'npm run dev' to build and start the dev server
+4. A 'js' directory is created on 'npm run test' which contains the transpiled js files required for testing
+5. remap-istanbul for code coverage reporting
+
 ## Features
 
 <dl>
+
   <dt>Quick scaffolding</dt>
   <dd>Create components, containers, routes, selectors and sagas - and their tests - right from the CLI!</dd>
 
