@@ -50,11 +50,9 @@ module.exports = (config) => {
 
     coverageReporter: {
       dir: path.join(process.cwd(), 'coverage'),
-      reporters: [
-        { type: 'lcov', subdir: 'lcov' },
-        { type: 'html', subdir: 'html' },
-        { type: 'text-summary' },
-      ],
+      subdir: ".",
+      type : 'json',
+      file : 'coverage-final.json'
     },
 
   });
