@@ -39,7 +39,7 @@ module.exports = {
     // Generate index.js and index.test.js
     const actions = [{
       type: 'add',
-      path: '../../app/components/{{properCase name}}/index.js',
+      path: '../../app/components/{{properCase name}}/index.ts',
       templateFile: data.type === 'ES6 Class' ? './component/es6.js.hbs' : './component/stateless.js.hbs',
       abortOnFail: true,
     }, {
@@ -63,7 +63,7 @@ module.exports = {
     if (data.wantMessages) {
       actions.push({
         type: 'add',
-        path: '../../app/components/{{properCase name}}/messages.js',
+        path: '../../app/components/{{properCase name}}/messages.ts',
         templateFile: './component/messages.js.hbs',
         abortOnFail: true,
       });

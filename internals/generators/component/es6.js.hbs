@@ -4,17 +4,20 @@
 *
 */
 
-import React from 'react';
+import * as React from 'react';
 
 {{#if wantMessages}}
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
 {{/if}}
 {{#if wantCSS}}
-import styles from './styles.css';
+import * as styles from './styles.css';
 {{/if}}
 
-class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export interface {{ properCase name }}Props {
+}
+
+class {{ properCase name }} extends React.Component<{{ properCase name }}Props, any> { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       {{#if wantCSS}}
