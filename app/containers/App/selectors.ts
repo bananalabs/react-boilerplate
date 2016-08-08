@@ -1,6 +1,14 @@
 /**
  * The global state selectors
  */
+import { createSelector } from 'reselect';
+
+const selectGlobal = () => (state) => state.global;
+
+const getVisibility = () => createSelector(
+  selectGlobal(),
+  (globalState) => globalState.show
+);
 
 const selectLocationState = () => {
   let prevRoutingState;
@@ -17,5 +25,6 @@ const selectLocationState = () => {
 };
 
 export {
+  getVisibility,
   selectLocationState,
 };

@@ -8,17 +8,40 @@
 
 // Import the CSS reset, which HtmlWebpackPlugin transfers to the build folder
 import 'sanitize.css/sanitize.css';
+import { toggle } from './actions';
 
 // tslint:disable-next-line
 import * as React from 'react';
 import * as styles from './style.css';
+import { connect } from 'react-redux';
+import { createStructuredSelector }  from 'reselect';
+import { getVisibility } from './selectors';
 
-function App() {
-  return (
-    <div>
-      <p className={styles.title}>Hello World</p>
-    </div>
-  );
+export interface AppProps {
+  show: boolean;
+  dispatch: any;
 }
 
-export default App;
+class App extends React.Component<AppProps, {}> {
+
+  handleClick(): void {
+    this.props.dispatch(toggle());
+  }
+
+  render() {
+    const show = this.props.show ? 'visible' : 'hidden';
+    return (
+      <div>
+        <p className={styles.title} style={{visibility:show}}>Hello World</p>
+        <button className='btn btn-default'
+          onClick={this.handleClick.bind(this)}>Click Me!</button>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = createStructuredSelector({
+  show: getVisibility(),
+});
+
+export default connect(mapStateToProps)(App);
